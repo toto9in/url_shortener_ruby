@@ -19,7 +19,6 @@ class LinksController < ApplicationController
                                 turbo_stream.replace('link_form', partial: 'links/form', locals: { link: Link.new })]
         end
       end
-      redirect_to root_path
     else
       index
       render :index, status: :unprocessable_entity
