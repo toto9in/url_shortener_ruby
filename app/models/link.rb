@@ -8,7 +8,7 @@ class Link < ApplicationRecord
   end
 
   def self.find(id)
-    super ShortCode.decode(id)
+    super (id.is_a?(Integer) ? id : ShortCode.decode(id))
   end
 
   def to_param
